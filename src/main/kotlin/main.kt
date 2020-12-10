@@ -9,7 +9,7 @@ fun main() {
 }
 
 fun agoToText(timeInSecondAgo: Int) = when {
-    (timeInSecondAgo > 0 && timeInSecondAgo <= minute ) -> "только что"
+    (timeInSecondAgo in 1..minute) -> "только что"
     (timeInSecondAgo > minute + 1 && timeInSecondAgo <= hour ) -> (timeInSecondAgo / minute).toString() +" " + minuteToText(timeInSecondAgo / minute) + " назад"
     (timeInSecondAgo > hour +1 && timeInSecondAgo <= day ) -> (timeInSecondAgo / hour).toString() + " " + hourToText(timeInSecondAgo / hour) + " назад"
     (timeInSecondAgo > day +1 && timeInSecondAgo <= day * 2 ) -> "сегодня"
